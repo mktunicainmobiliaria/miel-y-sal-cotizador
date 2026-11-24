@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cotiza la barra de snacks ideal para tu evento con Miel & Sal." />
+    <title>Miel & Sal | Cotiza tu evento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Miel y Sal, inicio"><img src="assets/logo-miel-y-sal-negro.png" alt="Miel y Sal - Tu antojo diferente" /></a>
+        <a class="nav-link" href="#cotizador">Cotiza tu evento</a>
+      </nav>
+      <div class="hero-copy" id="inicio">
+        <p class="eyebrow">Barras de snacks para eventos</p>
+        <h1>Tu antojo diferente.</h1>
+        <p class="lead">Elige tus barras favoritas y recibe un estimado listo para enviar por WhatsApp.</p>
+        <a class="button button-dark" href="#cotizador">Crear mi cotización <span>↓</span></a>
+      </div>
+    </header>
+
+    <main id="cotizador">
+      <section class="intro section">
+        <p class="eyebrow">Paso 1</p>
+        <h2>Elige tus barras</h2>
+        <p>Puedes agregar una o varias opciones. Todos los precios se calculan por persona, con un mínimo de 50 invitados.</p>
+      </section>
+
+      <section class="section menus" aria-label="Menú de barras">
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+
+      <section class="section form-section">
+        <div class="form-panel">
+          <div>
+            <p class="eyebrow">Paso 2</p>
+            <h2>Cuéntanos del evento</h2>
+          </div>
+          <form id="quoteForm">
+            <div class="form-grid">
+              <label>Nombre<input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required /></label>
+              <label>Teléfono<input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="33 0000 0000" required /></label>
+              <label>Fecha del evento<input id="date" name="date" type="date" required /><small class="date-error" id="dateError" hidden>Selecciona una fecha a partir de hoy.</small></label>
+              <label>Horario de inicio<input id="time" name="time" type="time" required /></label>
+              <label>Número de invitados<input id="guests" name="guests" type="number" min="1" value="50" required /></label>
+              <label>Tipo de evento<input id="eventType" name="eventType" placeholder="Ej. boda, cumpleaños" required /></label>
+              <label class="full">Lugar o colonia<input id="location" name="location" placeholder="Ej. Zapopan, Jal." required /></label>
+            </div>
+          </form>
+        </div>
+
+        <aside class="quote-panel" aria-live="polite">
+          <div class="quote-heading">
+            <div><p class="eyebrow">Tu estimado</p><h2>Cotización</h2></div>
+            <span class="guest-badge" id="guestBadge">50 personas</span>
+          </div>
+          <div class="selected-items" id="selectedItems"><p class="empty-cart">Aún no has elegido una barra.</p></div>
+          <div class="quote-line"><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+          <div class="quote-line hidden" id="nightLine"><span>Servicio nocturno</span><strong>$500</strong></div>
+          <div class="quote-line total"><span>Total estimado</span><strong id="total">$0</strong></div>
+          <div class="quote-line advance"><span>Anticipo para reservar (50%)</span><strong id="advance">$0</strong></div>
+          <button class="button button-whatsapp" id="whatsappButton" type="button" disabled>Enviar cotización por WhatsApp <span>↗</span></button>
+          <p class="fine-print">El flete se confirma según ubicación. Sujeto a disponibilidad y válido por 5 días.</p>
+        </aside>
+      </section>
+
+      <section class="conditions section">
+        <p class="eyebrow">Información importante</p>
+        <div class="condition-grid">
+          <p><strong>Servicio incluido</strong>Personal atendiendo la barra durante 2 horas.</p>
+          <p><strong>Mínimo de contratación</strong>Los precios consideran al menos 50 personas.</p>
+          <p><strong>Horario nocturno</strong>Se agregan $500 en servicios que inician a partir de las 8:00 pm.</p>
+          <p><strong>Montaje y acceso</strong>El flete, espacios especiales y accesos se confirman con el lugar del evento.</p>
+        </div>
+      </section>
+    </main>
+    <footer><img src="assets/logo-miel-y-sal-negro.png" alt="Miel y Sal - Tu antojo diferente" /></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
